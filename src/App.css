@@ -6,6 +6,12 @@
   height: 40vmin;
 }
 
+.App-logo-break {
+  height: 40vmin;
+  background-color: red;
+  transform: rotate(300deg);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -9,13 +9,29 @@ import Quotes from "./Quotes";
 import Lamp from "./Lamp";
 
 class App extends Component {
+  state = {
+    working: true,
+    logoClass: "App-logo"
+  };
+  handleClick = () => {
+    this.setState({
+      working: !this.state.working,
+      logoClass:
+        this.state.logoClass === "App-logo-break"
+          ? "App-logo"
+          : "App-logo-break"
+    });
+  };
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className={this.state.logoClass} alt="logo" />
           <h1 className="App-title">Simpsons Quotes</h1>
         </header>
+        <button onClick={this.handleClick}>
+          {this.state.working === true ? "working" : "on a break"}
+        </button>
         <Quote
           quote="I believe the children are the future... Unless we stop them now!"
           character="Homer Simpson"
